@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Citas Médicas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-screen">
+        <h1>Iniciar Sesión</h1>
+        <select id="user-type">
+            <option value="paciente">Paciente</option>
+            <option value="medico">Médico</option>
+            <option value="admin">Administrador</option>
+        </select>
+        <input type="text" id="username" placeholder="Nombre de usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Iniciar Sesión</button>
+        <p>¿Eres paciente? <a href="#" onclick="showRegister()">Regístrate aquí</a></p>
+    </div>
+
+    <div id="register-screen" class="hidden">
+        <h1>Registro de Paciente</h1>
+        <input type="text" id="register-username" placeholder="Nombre de usuario">
+        <input type="password" id="register-password" placeholder="Contraseña">
+        <button onclick="registerPaciente()">Registrarse</button>
+        <p>¿Ya tienes una cuenta? <a href="#" onclick="showLogin()">Inicia sesión aquí</a></p>
+    </div>
+
+    <div id="paciente-screen" class="hidden">
+        <h1>Bienvenido, Paciente</h1>
+        <button onclick="showAgendarCita()">Agendar Cita</button>
+        <button onclick="showMisCitas()">Mis Citas</button>
+        <div id="paciente-content"></div>
+    </div>
+
+    <div id="medico-screen" class="hidden">
+        <h1>Bienvenido, Médico</h1>
+        <button onclick="showCitasMedico()">Ver Mis Citas</button>
+        <div id="medico-content"></div>
+    </div>
+
+    <div id="admin-screen" class="hidden">
+        <h1>Bienvenido, Administrador</h1>
+        <button onclick="showTodasCitas()">Ver Todas las Citas</button>
+        <button onclick="showAgendarCitaAdmin()">Agendar Cita</button>
+        <div id="admin-pacientes"></div>
+        <div id="admin-citas"></div>
+        <div id="admin-content"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
